@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TicTacToe"
+            android:textSize="45sp"
+            app:layout_constraintBottom_toTopOf="@id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteY="64dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2"
+            tools:visibility="visible" />
+
+        <ToggleButton
+            android:id="@+id/x_Button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textOff="X"
+            android:textOn="X"
+            app:layout_constraintEnd_toStartOf="@+id/o_Button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline" />
+
+        <ToggleButton
+            android:id="@+id/o_Button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textOff="O"
+            android:textOn="O"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/x_Button"
+            app:layout_constraintTop_toBottomOf="@+id/guideline" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/star_game_or_select_a_player"
+            android:clickable="true"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/x_Button" />
+
+        <TableLayout
+            android:id="@+id/TTTBoard"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintBottom_toTopOf="@id/guideline4"
+            app:layout_constraintTop_toBottomOf="@id/textView">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/border_bottom">
+
+
+                <TextView
+                    android:id="@+id/cell00"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_right"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:onClick="markMyMove"
+                    android:textAlignment="center"
+                    android:textSize="50sp"
+                    tools:text="X" />
+
+                <TextView
+                    android:id="@+id/cell01"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:onClick="markMyMove"
+                    android:textAlignment="center"
+                    android:textSize="50sp"
+                    tools:text="X" />
+
+                <TextView
+                    android:id="@+id/cell02"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_left"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:onClick="markMyMove"
+                    android:textAlignment="center"
+                    android:textSize="50sp"
+                    tools:text="X" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true">
+
+                <TextView
+                    android:id="@+id/cell10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_right"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:onClick="markMyMove"
+                    android:textAlignment="center"
+                    android:textSize="50sp"
+                    tools:text="X" />
+
+                <TextView
+                    android:id="@+id/cell11"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:onClick="markMyMove"
+                    android:textAlignment="center"
+                    android:textSize="50sp"
+                    tools:text="X" />
+
+                <TextView
+                    android:id="@+id/cell12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_left"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:onClick="markMyMove"
+                    android:textAlignment="center"
+                    android:textSize="50sp"
+                    tools:text="X" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/border_top">
+
+                <TextView
+                    android:id="@+id/cell20"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_right"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:onClick="markMyMove"
+                    android:textAlignment="center"
+                    android:textSize="50sp"
+                    tools:text="X" />
+
+                <TextView
+                    android:id="@+id/cell21"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:onClick="markMyMove"
+                    android:textAlignment="center"
+                    android:textSize="50sp"
+                    tools:text="X" />
+
+                <TextView
+                    android:id="@+id/cell22"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_left"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:onClick="markMyMove"
+                    android:textAlignment="center"
+                    android:textSize="50sp"
+                    tools:text="X" />
+            </TableRow>
+
+        </TableLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.8" />
+
+        <Button
+            android:id="@+id/startGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Restart Game"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline4" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
